@@ -1,0 +1,29 @@
+.logo {
+  display: inline-block;
+  width: 190.4px;
+  height: 37.6px;
+  @include trans(opacity);
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    opacity: .6;
+  }
+
+  @media (min-width: $tablet) {
+    width: 172.3px;
+    height: 57.1px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 202px;
+    height: 60px;
+  }
+
+  .logo_footer {
+    width: 127.8px;
+    height: 23.4px;
+  }
+}

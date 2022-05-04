@@ -1,0 +1,59 @@
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 0;
+
+  &__text {
+    @include font();
+    font-size: 16px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $textDark;
+
+    @media (min-width: $tablet) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &__arrow {
+    position: relative;
+    width: 24px;
+    height: 12px;
+    margin-left: 15px;
+    @include trans(width);
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: calc(100% - 2px);
+      transform: translateY(-50%);
+      height: 2px;
+      background: #000;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 7px;
+      height: 12px;
+      margin-left: 28px;
+      background-image: url("../img/triangle.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &:hover {
+    .link-arrow__arrow {
+        width: 32px;
+    }
+  }
+
+  &:active {
+    opacity: .3;
+  }
+}

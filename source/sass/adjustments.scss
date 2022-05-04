@@ -1,0 +1,159 @@
+/* Global */
+
+:root {
+  box-sizing: border-box;
+  // --bg: rgb(255, 255, 0);
+  // background-color: var(--bg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.content-box-component {
+  box-sizing: content-box;
+}
+
+html {
+  height: 100%;
+  font-family: $fontArial;
+  font-size: 14px;
+  line-height: 1.28;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+body {
+  height: 100%;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul li,
+ol li {
+  list-style: none;
+}
+
+dd {
+  margin: 0;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.wrapper {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  min-height: 100%;
+  min-width: 320px;
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1220px;
+  padding: 0 20px;
+
+  &_p {
+    padding: 0;
+  }
+
+  @media (min-width: $tablet) {
+    padding: 0 30px;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 0;
+  }
+}
+
+// Если в браузере отключен javascript
+.no-js {
+  & .wrapper::before {
+    content: "Пожалуйста, разрешите использовать JavaScript! Без него сайт грустит...";
+    position: fixed;
+    top: -300px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 99999;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgb(241, 83, 94);
+    background-color: rgba(0, 0, 0, 0.75);
+    animation-name: real;
+    animation-delay: 3s;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes real {
+  0% {
+    top: -300px;
+  }
+  10% {
+    top: 0;
+  }
+  90% {
+    top: 0;
+  }
+  100% {
+    top: -300px;
+  }
+};

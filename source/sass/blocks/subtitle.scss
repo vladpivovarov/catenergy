@@ -1,0 +1,13 @@
+.subtitle {
+  @include font();
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  line-height: 37px;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet) {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}

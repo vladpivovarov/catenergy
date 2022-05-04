@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat Energy - функциональное питание для котов</title>
+  <link rel="preload" href="fonts/oswaldmedium.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/oswaldregular.woff2" as="font" crossorigin>
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="./js/modernizr-custom.js" async></script>
+  <script src="./js/main.js" defer></script>
+  <script src="./js/test.js" defer></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=60f13f6a-8908-4537-be92-ab6945c1fb02&lang=ru_RU"
+    type="text/javascript">
+    </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="page">
+      <header class="header header_active-js container container_p">
+        <div class="container">
+          <a href="./" class="logo">
+            <picture>
+              <source media="(min-width: 1370px)" srcset="./img/logo/logo-desktop.svg">
+              <source media="(min-width: 768px)" srcset="./img/logo/logo-tablet.svg">
+              <img class="logo-svg" src="./img/logo/logo-mobile.svg" alt="Логотип Cat Energy">
+            </picture>
+          </a>
+          <button class="header__btn header__btn_close"></button>
+        </div>
+        <nav class="nav header__nav nav_active nav_white-bg">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="./">Главная</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="./catalog.html">Каталог продукции</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link nav__link_active" href="./form.html">Подбор программы</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main">
+        <section class="selection">
+          <div class="container">
+            <form action="" class="selection__form">
+              <h1 class="visually-hidden">Подбор программы питания для вашего кота</h1>
+              <h2 class="title selection__title">Подбор программы</h2>
+              <div class="selection__desc">Заполните анкету, и мы подберем программу питания для вашего кота</div>
+              <div class="selection__wrap">
+                <fieldset class="selection__data-cat">
+                  <legend class="visually-hidden">Данные вашего кота</legend>
+                  <label class="selection__input-row input-block">
+                    <span class="input-block__desc">Имя:*</span>
+                    <input type="text" name="name" class="input-block__input">
+                  </label>
+                  <label class="selection__input-row input-block">
+                    <span class="input-block__desc">Вес (кг):*</span>
+                    <input type="text" name="weight" class="input-block__input">
+                  </label>
+                  <label class="selection__input-row input-block">
+                    <span class="input-block__desc">Возраст (лет):</span>
+                    <input type="text" name="name" class="input-block__input">
+                  </label>
+                </fieldset>
+                <fieldset class="selection__data-purpose">
+                  <legend class="visually-hidden">Цель питания</legend>
+                  <label class="selection__input-row input-block input-block_reverse">
+                    <span class="input-block__desc">Похудение</span>
+                    <input type="radio" name="purpose" value="weight-loss" class="input-block__input visually-hidden"
+                      checked>
+                    <div class="input-block__radio-custom"></div>
+                  </label>
+                  <label class="selection__input-row input-block input-block_reverse">
+                    <span class="input-block__desc">Набор массы</span>
+                    <input type="radio" name="purpose" value="weight-gain" class="input-block__input visually-hidden">
+                    <div class="input-block__radio-custom"></div>
+                  </label>
+                  <label class="selection__input-row input-block input-block_reverse">
+                    <span class="input-block__desc">Не знаю (Нужен ваш совет)</span>
+                    <input type="radio" name="purpose" value="i-do-not-know" class="input-block__input visually-hidden">
+                    <div class="input-block__radio-custom"></div>
+                  </label>
+                </fieldset>
+              </div>
+              <fieldset class="selection__data-owner">
+                <h3 class="title-line selection__subtitle">Контактные данные (владельца кота)</h3>
+                <div class="selection__data-owner-wrap">
+                  <label class="selection__input-row input-block">
+                    <span class="input-block__desc">E-mail:*</span>
+                    <div class="input-block__wrap_icon">
+                      <input type="text" name="email" class="input-block__input">
+                      <div class="input-block__icon">
+                        <svg class="input-block__svg" width="20" height="14">
+                          <use xlink:href="img/sprite-svg/sprite.svg#icon-mail"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="selection__input-row input-block">
+                    <span class="input-block__desc">Телефон:*</span>
+                    <div class="input-block__wrap_icon">
+                      <input type="text" name="phone" class="input-block__input">
+                      <div class="input-block__icon input-block__icon_r">
+                        <svg class="input-block__svg" width="20" height="20">
+                          <use xlink:href="img/sprite-svg/sprite.svg#icon-phone"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="selection__data-comments">
+                <h3 class="title-line selection__subtitle">Комментарий</h3>
+                <div>
+                  <textarea name="comments" class="selection__textarea"></textarea>
+                </div>
+              </fieldset>
+              <fieldset class="selection__data-additionally">
+                <h3 class="title-line selection__subtitle">Дополнительно</h3>
+                <legend class="visually-hidden">Приобретайте дополнительно:</legend>
+                <div class="selection__additionally-wrap">
+                  <label class="selection__input-row input-block input-block_reverse">
+                    <span class="input-block__desc">Сахарозаменитель</span>
+                    <input type="checkbox" name="add" value="sugar" class="input-block__input visually-hidden" checked>
+                    <div class="input-block__checkbox-custom"></div>
+                  </label>
+                  <label class="selection__input-row input-block input-block_reverse">
+                    <span class="input-block__desc">Питьевая вода</span>
+                    <input type="checkbox" name="add" value="water" class="input-block__input visually-hidden">
+                    <div class="input-block__checkbox-custom"></div>
+                  </label>
+                  <label class="selection__input-row input-block input-block_reverse">
+                    <span class="input-block__desc">Молоко</span>
+                    <input type="checkbox" name="add" value="milk" class="input-block__input visually-hidden">
+                    <div class="input-block__checkbox-custom"></div>
+                  </label>
+                  <label class="selection__input-row input-block input-block_reverse">
+                    <span class="input-block__desc">Витамины</span>
+                    <input type="checkbox" name="add" value="vitamins" class="input-block__input visually-hidden">
+                    <div class="input-block__checkbox-custom"></div>
+                  </label>
+                </div>
+              </fieldset>
+              <div class="selection__send-wrap">
+                <button type="submit" class="btn selection__btn">Отправить заявку</button>
+                <span class="selection__warn">* — Обязательные поля</span>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <footer class="footer">
+    <section class="contact contact_silver">
+      <h2 class="title visually-hidden">Как нас найти</h2>
+      <div class="contact__info">
+        <div class="container contact__container">
+          <div class="contact__title">Приглашаем к сотрудничеству дилеров!</div>
+          <address class="contact__address">
+            <p class="contact__address-details">
+              ул. Большая
+              <br>
+              Конюшенная, д. 19/8
+            </p>
+            <p class="contact__city">Санкт-Петербург</p>
+          </address>
+        </div>
+      </div>
+      <div id="map" class="contact__map"></div>
+    </section>
+    <div class="container footer__container">
+      <a href="./" class="logo footer__logo">
+        <picture>
+          <img class="logo-svg" src="./img/logo/logo-footer.svg" alt="Логотип Cat Energy">
+        </picture>
+      </a>
+      <ul class="socials footer__socials">
+        <li class="socials__item">
+          <a href="#" class="socials__link">
+            <span class="visually-hidden">Мы во вконтакте</span>
+            <svg class="socials__svg socials__svg_vk" width="22" height="12">
+              <use xlink:href="img/sprite-svg/sprite.svg#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="#" class="socials__link">
+            <span class="visually-hidden">Мы в instagram</span>
+            <svg class="socials__svg socials__svg_insta" width="16.1" height="16">
+              <use xlink:href="img/sprite-svg/sprite.svg#icon-insta"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="#" class="socials__link">
+            <span class="visually-hidden">Мы во facebook</span>
+            <svg class="socials__svg socials__svg_fb" width="10" height="19">
+              <use xlink:href="img/sprite-svg/sprite.svg#icon-fb"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <a href="#" class="author footer__author">
+        <div class="author__name">
+          HTML Academy
+        </div>
+        <div class="author__logo">
+          <svg class="author__img" role="img" aria-label="Логотип создателя сайта" width="34" height="34">
+            <use xlink:href="./img/sprite-svg/sprite.svg#icon-html-academy"></use>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </footer>
+  </div>
+</body>
+
+</html>

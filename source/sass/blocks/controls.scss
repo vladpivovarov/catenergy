@@ -1,0 +1,102 @@
+.controls {
+  width: 228px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $tablet) {
+    width: initial;
+  }
+}
+
+.controls__btn {
+  padding: 5px 15px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet) {
+    display: inline-flex;
+    flex: 0 0 auto;
+    height: 35px;
+    margin-right: 25px;
+    padding: 0;
+    font-size: 20px;
+    line-height: initial;
+    border-bottom: 1px dotted #B2B2B2;
+
+    &:last-child {
+      margin-right: 0;
+      margin-left: 25px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #919191;
+    }
+
+    &:active {
+      border: none;
+    }
+  }
+}
+
+.conrols__line {
+  position: relative;
+  flex-grow: 1;
+  height: 14px;
+  padding: 3px 5px;
+  border: 1px solid #CDCDCD;
+  border-radius: 10px;
+  background: #ffffff;
+
+  @media (min-width: $tablet) {
+    height: 6px;
+    width: 428px;
+    border: none;
+    padding: 0;
+    background-color: #dcdcdc;
+  }
+}
+
+.controls__handle {
+  display: block;
+  background-color: $basicGreen;
+  height: 100%;
+  border-radius: 10px;
+
+  @media (min-width: $tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    width: 34px;
+    max-width: 34px;
+    min-width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: (0px 1px 5px rgba(0, 0, 0, 0.16));
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $basicGreen;
+    }
+
+    &:hover {
+      box-shadow: (0px 3px 5px rgba(0, 0, 0, 0.16));
+    }
+
+    &:active {
+      border: 1px solid $basicGreen;
+    }
+  }
+}

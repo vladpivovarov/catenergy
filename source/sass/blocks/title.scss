@@ -1,0 +1,14 @@
+.title {
+  margin: 0;
+
+  @include font();
+  font-size: 36px;
+  line-height: 36px;
+  color: $textLight;
+
+  @media (min-width: 768px) {
+    font-size: 60px;
+    line-height: 60px;
+    color: $textDark;
+  }
+}

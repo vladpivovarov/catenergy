@@ -1,0 +1,83 @@
+.header {
+  position: relative;
+  padding: 12px 0 16.39px 0;
+
+  &_active-js {
+    padding-bottom: 0;
+  }
+
+  &_white-bg {
+
+  }
+
+  @media (min-width: $tablet) {
+    padding-bottom: 0;
+  }
+}
+
+.header__nav {
+  margin-top: 16.39px;
+}
+
+.header__btn {
+  position: absolute;
+  right: 12px;
+  top: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  @include trans(opacity);
+
+  &:hover {
+    opacity: .4;
+  }
+
+  &:active {
+    opacity: .2;
+  }
+
+  &::after {
+    content: "";
+    width: 24px;
+    height: 16px;
+    background-image: url("../img/sprite-svg/icon-mobile-menu.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.header__btn_close {
+  &::after {
+    width: 18px;
+    height: 18px;
+    background-image: url("../img/sprite-svg/icon-close.svg");
+  }
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    padding-top: 24px;
+    padding-right: 10px;
+    background-color: #ffffff;
+
+    &__nav {
+      margin-top: 0px;
+    }
+
+    &__btn {
+      display: none;
+    }
+  }
+
+  @media (min-width: 1370px) {
+    background-color: transparent;
+    padding-top: 53px;
+  }
+}

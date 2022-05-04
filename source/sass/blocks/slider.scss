@@ -1,0 +1,191 @@
+
+
+.slider__container {
+  display: grid;
+  grid-template-rows: min-content min-content;
+  justify-content: center;
+  padding-top: 42px;
+
+  @media (min-width: $tablet) {
+    padding-top: 30px;
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 0px;
+  }
+}
+
+.slider__wrap {
+  width: 311px;
+  height: 232px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 23px;
+
+  @media (min-width: $tablet) {
+    width: 708px;
+    height: 620px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 690px;
+    height: 656px;
+  }
+}
+
+.slider__before,
+.slider__after {
+  width: 50%;
+  height: 100%;
+  transition: width 0.5s;
+  background-repeat: no-repeat;
+  background-size: 311px auto;
+
+  @media (min-width: $tablet) {
+    background-size: 708px auto;
+    transition: none;
+  }
+
+  @media (min-width: $desktop) {
+    background-size: 690px auto;
+    transition: none;
+  }
+}
+
+.slider__before {
+  background-position: left top 20px;
+}
+
+.slider__after {
+  background-position: right -3px top 20px;
+}
+
+// Проверка на поддержку webp через modernizr
+
+.webp .slider__before {
+  background-image: url("../img/before/before-mobile@1x.webp");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/before/before-mobile@2x.webp");
+  }
+
+  @media (min-width: $tablet) {
+    background-image: url("../img/before/before-tablet@1x.webp");
+  }
+
+  @media (min-width: $tablet) and (min-resolution: 2dppx) {
+    background-image: url("../img/before/before-tablet@2x.webp");
+  }
+
+  @media (min-width: $desktop) {
+    background-image: url("../img/before/before-desktop@1x.webp");
+  }
+
+  @media (min-width: $desktop) and (min-resolution: 2dppx) {
+    background-image: url("../img/before/before-desktop@2x.webp");
+  }
+}
+
+.webp .slider__after {
+  background-image: url("../img/after/after-mobile@1x.webp");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/after/after-mobile@2x.webp");
+  }
+
+  @media (min-width: $tablet) {
+    background-image: url("../img/after/after-tablet@1x.webp");
+  }
+
+  @media (min-width: $tablet) and (min-resolution: 2dppx) {
+    background-image: url("../img/after/after-tablet@2x.webp");
+  }
+
+  @media (min-width: $desktop) {
+    background-image: url("../img/after/after-desktop@1x.webp");
+  }
+
+  @media (min-width: $desktop) and (min-resolution: 2dppx) {
+    background-image: url("../img/after/after-desktop@2x.webp");
+  }
+}
+
+.no-webp .slider__before, .no-js .slider__before  {
+  background-image: url("../img/before/before-mobile@1x.png");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/before/before-mobile@2x.png");
+  }
+
+  @media (min-width: $tablet) {
+    background-image: url("../img/before/before-tablet@1x.png");
+  }
+
+  @media (min-width: $tablet) and (min-resolution: 2dppx) {
+    background-image: url("../img/before/before-tablet@2x.png");
+  }
+
+  @media (min-width: $desktop) {
+    background-image: url("../img/before/before-desktop@1x.png");
+  }
+
+  @media (min-width: $desktop) and (min-resolution: 2dppx) {
+    background-image: url("../img/before/before-desktop@2x.png");
+  }
+}
+
+.no-webp .slider__after, .no-js .slider__after {
+  background-image: url("../img/after/after-mobile@1x.png");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/after/after-mobile@2x.png");
+  }
+
+  @media (min-width: $tablet) {
+    background-image: url("../img/after/after-tablet@1x.png");
+  }
+
+  @media (min-width: $tablet) and (min-resolution: 2dppx) {
+    background-image: url("../img/after/after-tablet@2x.png");
+  }
+
+  @media (min-width: $desktop) {
+    background-image: url("../img/after/after-desktop@1x.png");
+  }
+
+  @media (min-width: $desktop) and (min-resolution: 2dppx) {
+    background-image: url("../img/after/after-desktop@2x.png");
+  }
+}
+
+.slider_show {
+  width: 100%;
+}
+
+.slider_hide {
+  width: 0%;
+}
+
+.slider__handle {
+  width: 50%;
+  padding: 0;
+  transition: width 0.5s;
+
+  @media (min-width: $tablet) {
+    width: 34px;
+  }
+}
+
+.slider__controls {
+  display: inline-flex;
+  justify-content: center;
+  margin: auto;
+
+  @media (min-width: $tablet) {
+    margin-top: -80px;
+  }
+
+  @media (min-width: $desktop) {
+    margin-top: -100px;
+  }
+}

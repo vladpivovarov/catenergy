@@ -1,0 +1,38 @@
+.author {
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    & .author__img {
+      fill: $basicGreen;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.author__name {
+  margin-right: auto;
+  color: #444444;
+
+  @media (min-width: $tablet) {
+    margin-right: 22px;
+    font-size: 16px;
+  }
+}
+
+.author__logo {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: $tablet) {
+    margin-left: 0;
+  }
+}
+
+.author__img {
+  fill: #666666;
+}

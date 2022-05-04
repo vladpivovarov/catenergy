@@ -1,0 +1,143 @@
+.possibilities {
+  margin-bottom: 27px;
+}
+
+.possibilities__container {
+  @media (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+}
+
+.possibilities__item {
+  display: grid;
+  grid-template-areas:
+    "icon title"
+    "desc desc"
+    "link link";
+  grid-template-columns: 50px 1fr;
+  margin-bottom: 20px;
+  padding: 24px 22px;
+  background-color: $basicGray;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  @media (min-width: $tablet) {
+    grid-template-areas:
+      "title icon"
+      "desc icon"
+      "link link";
+    grid-template-columns: 1fr 200px;
+    padding: 77px 62px 52px 52px;
+  }
+
+  @media (min-width: $desktop) {
+    grid-template-areas:
+      "icon title"
+      "desc desc"
+      "link link";
+    grid-template-columns: 134px 1fr;
+    padding: 77px 51px 52px 52px;
+  }
+}
+
+.possibilities__icon {
+  position: relative;
+  grid-area: icon;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $basicGreen;
+
+  @media (min-width: $tablet) {
+    width: 200px;
+    height: 200px;
+    margin-bottom: -15px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0;
+  }
+}
+
+.possibilities__icon-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &_slim {
+    margin-top: -5px;
+
+    @media (min-width: $tablet) {
+      margin-top: -15px;
+      width: 140px;
+      height: 192px;
+    }
+
+    @media (min-width: $desktop) {
+      margin-top: -5px;
+      width: 70px;
+      height: 97px;
+    }
+  }
+
+  &_pro {
+    @media (min-width: $tablet) {
+      width: 269px;
+      height: 112px;
+    }
+
+    @media (min-width: $desktop) {
+      width: 134px;
+      height: 56px;
+    }
+  }
+}
+
+.possibilities__title {
+  grid-area: title;
+  margin-left: 19px;
+
+  @media (min-width: $tablet) {
+    margin-left: 0;
+  }
+
+  @media (min-width: $desktop) {
+    margin-left: 25px;
+  }
+}
+
+.possibilities__desc {
+  grid-area: desc;
+  margin-top: 22px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #d9d9d9;
+  color: $darkGray;
+
+  @media (min-width: $tablet) {
+    padding-right: 33px;
+    font-size: 16px;
+    color: $textDark;
+    border-bottom: none;
+  }
+
+  @media (min-width: $desktop) {
+    margin-top: 30px;
+    padding-right: 0;
+  }
+}
+
+.possibilities__link-block {
+  grid-area: link;
+  margin-top: 15px;
+
+  @media (min-width: $tablet) {
+    margin-top: 0;
+  }
+}

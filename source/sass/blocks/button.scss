@@ -1,0 +1,35 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 54px;
+  padding: 14px 26px 14px 26px;
+  border: none;
+  @include font();
+  font-size: 20px;
+  color: $textLight;
+  text-transform: uppercase;
+  background-color: $basicGreen;
+  @include trans2(color, background-color);
+
+  &:hover {
+    background-color: $basicGreen2;
+  }
+
+  &:active {
+    color: rgba($textLight, .3);
+  }
+}
+
+.btn_show-all {
+  background-color: #F2F2F2;
+  color: #444444;
+
+  &:hover {
+    background-color: rgba(#F2F2F2, .7);
+  }
+
+  &:active {
+    color: rgba($textDark, .3);
+  }
+}

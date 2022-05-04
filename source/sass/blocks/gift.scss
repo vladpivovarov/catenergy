@@ -1,0 +1,121 @@
+.gift {
+  margin-top: 39px;
+  margin-bottom: 35px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  overflow: auto;
+
+  @media (min-width: $tablet) {
+    min-height: 200px;
+    margin-top: 69px;
+    margin-bottom: 76px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 245px;
+    height: 300px;
+    float: right;
+    margin: 0;
+  }
+}
+
+.gift__container {
+
+  @media (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop) {
+    display: block;
+  }
+}
+
+.webp .gift {
+  background-image: url("../img/gift-photo/gift-photo-mobile@1x.webp");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/gift-photo/gift-photo-mobile@2x.webp");
+  }
+
+  @media (min-width: $tablet) {
+    background-image: url("../img/gift-photo/gift-photo-tablet@1x.webp");
+  }
+
+  @media (min-width: $tablet) and (min-resolution: 2dppx) {
+    background-image: url("../img/gift-photo/gift-photo-tablet@2x.webp");
+  }
+
+  @media (min-width: $desktop) {
+    background-image: url("../img/gift-photo/gift-photo-desktop@1x.webp");
+  }
+
+  @media (min-width: $desktop) and (min-resolution: 2dppx) {
+    background-image: url("../img/gift-photo/gift-photo-desktop@2x.webp");
+  }
+}
+
+.no-webp .gift, .no-js .gift {
+  background-image: url("../img/gift-photo/gift-photo-mobile@1x.jpg");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/gift-photo/gift-photo-mobile@2x.jpg");
+  }
+
+  @media (min-width: $tablet) {
+    background-image: url("../img/gift-photo/gift-photo-tablet@1x.jpg");
+  }
+
+  @media (min-width: $tablet) and (min-resolution: 2dppx) {
+    background-image: url("../img/gift-photo/gift-photo-tablet@2x.jpg");
+  }
+
+  @media (min-width: $desktop) {
+    background-image: url("../img/gift-photo/gift-photo-desktop@1x.jpg");
+  }
+
+  @media (min-width: $desktop) and (min-resolution: 2dppx) {
+    background-image: url("../img/gift-photo/gift-photo-desktop@2x.jpg");
+  }
+}
+
+.gift__icon {
+  margin: 64px 0 61px;
+
+  @media (min-width: $tablet) {
+    margin-left: 63px;
+  }
+
+  @media (min-width: $desktop) {
+    margin: 56px 0 47px;
+  }
+}
+
+.gift__svg {
+  fill: #ffffff;
+  width: 55.5px;
+}
+
+.gift__desc {
+  display: inline-block;
+  max-width: 162px;
+  margin-bottom: 43px;
+  font-size: 16px;
+  color: #ffffff;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 0;
+    margin-right: 109px;
+    text-align: left;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: initial;
+    margin-right: 0px;
+    padding: 0 41px 43px;
+    text-align: center;
+  }
+}

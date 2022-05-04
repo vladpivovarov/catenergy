@@ -1,0 +1,27 @@
+.header-wrap {
+  position: relative;
+  margin-bottom: 22px;
+
+  @media (min-width: 1370px) {
+    min-height: 696px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1370px) {
+    min-height: 696px;
+    margin-bottom: 82px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      bottom: 0;
+      background-image: url("../img/index-background/index-background-desktop@1x.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}

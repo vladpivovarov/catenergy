@@ -1,0 +1,160 @@
+.input-block {
+  display: flex;
+  height: 45px;
+  align-items: center;
+  @include font();
+  font-size: 16px;
+  line-height: 1.125em;
+  text-transform: uppercase;
+  color: #444444;
+
+  &:hover {
+    & .input-block__input[type=text] {
+      border: 1px solid #CDCDCD;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    height: 52px;
+    font-size: 20px;
+  }
+}
+
+.input-block__input {
+  position: relative;
+}
+
+.input-block__desc {
+  display: block;
+  width: max-content;
+}
+
+.selection__data-additionally .input-block,
+.selection__data-purpose .input-block {
+  height: auto;
+  color: #222222;
+}
+
+.input-block__input[type=text] {
+  height: 100%;
+  flex-grow: 1;
+  margin-left: 14px;
+  padding: 13.2px 15.1px 13.8px 15.1px;
+  border: 1px solid #e7e7e7;
+  text-transform: uppercase;
+  color: #444444;
+
+  &:focus {
+    border: 1px solid #444444;
+
+    & + .input-block__icon {
+      & .input-block__svg {
+        fill: $basicGreen;
+      }
+    }
+  }
+}
+
+.error[type=text] {
+  border: 1px solid #FF8282;
+
+  & + .input-block__icon {
+    & .input-block__svg {
+      fill: #FF8282;
+    }
+  }
+}
+
+.input-block__radio-custom {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+  border: 1px solid #cdcdcd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $tablet) {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.input-block__checkbox-custom {
+  width: 26px;
+  height: 26px;
+  margin-right: 15px;
+  border: 1px solid #cdcdcd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $tablet) {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.input-block__input[type=radio]:checked
++ .input-block__radio-custom:after {
+  content: "";
+  display: block;
+  width: 13.5px;
+  height: 13.5px;
+  border-radius: 50%;
+  background-color: $basicGreen;
+
+  @media (min-width: $tablet) {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+.input-block__input[type=checkbox]:checked
++ .input-block__checkbox-custom:after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 14px;
+  overflow: hidden;
+  background-image: url("../img/sprite-svg/icon-tick.svg");
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input-block_reverse .input-block__desc{
+  order: 1;
+}
+
+.input-block__wrap_icon {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+
+  & .input-block__input[type=text] {
+    padding-right: 46px;
+  }
+}
+
+.input-block__icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+
+  &_r {
+    right: 13px;
+  }
+}
+
+.input-block__svg {
+  fill: #222222;
+}
