@@ -9,7 +9,7 @@
   color: #444444;
 
   &:hover {
-    & .input-block__input[type=text], .input-block__input[type=email] {
+    & .input-block__input[type=text] {
       border: 1px solid #CDCDCD;
     }
   }
@@ -35,7 +35,7 @@
   color: #222222;
 }
 
-.input-block__input[type=text], .input-block__input[type=email] {
+.input-block__input[type=text] {
   height: 100%;
   flex-grow: 1;
   margin-left: 14px;
@@ -55,7 +55,7 @@
   }
 }
 
-.error[type=text], .error[type=email] {
+.error[type=text] {
   border: 1px solid #FF8282;
 
   & + .input-block__icon {
@@ -134,7 +134,7 @@
   height: 100%;
   flex-grow: 1;
 
-  & .input-block__input[type=text], .input-block__input[type=email] {
+  & .input-block__input[type=text] {
     padding-right: 46px;
   }
 }
