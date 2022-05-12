@@ -237,6 +237,13 @@ const formRealize = () => {
     const tel = formData.get("phone");
     const weight = formData.get("weight");
 
+    const scrollTo = (input) => {
+      seamless.scrollIntoView(input, {
+        behavior: "smooth",
+        block: "center"
+      });
+    }
+
     function validateE(email) {
       const emailBlock = form.querySelector("[name=email]");
       const emailRegexp = new RegExp(
@@ -244,6 +251,7 @@ const formRealize = () => {
       )
 
       if (emailRegexp.test(email) == false) {
+        scrollTo(emailBlock);
         emailBlock.classList.add("error");
         sendBool = false;
         return false;
@@ -258,6 +266,7 @@ const formRealize = () => {
       const reg = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
       const address = tel;
       if (reg.test(address) == false) {
+        scrollTo(telBlock);
         telBlock.classList.add("error");
         sendBool = false;
         return false;
@@ -271,6 +280,7 @@ const formRealize = () => {
       const nameBlock = form.querySelector("[name=name]");
       const names = name;
       if (names == false) {
+        scrollTo(nameBlock);
         nameBlock.classList.add("error");
         sendBool = false;
         return false;
@@ -285,6 +295,7 @@ const formRealize = () => {
       const weights = weight;
       const weightBlock = form.querySelector("[name=weight]");
       if (weights == false) {
+        scrollTo(weightBlock);
         weightBlock.classList.add("error");
         sendBool = false;
         return false;
