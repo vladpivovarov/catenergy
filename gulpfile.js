@@ -11,6 +11,7 @@ const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
 const del = require("del");
 const spritesmith = require("gulp.spritesmith");
+const webpack = require('webpack-stream');
 const sync = require("browser-sync").create();
 
 // STYLES
@@ -90,14 +91,18 @@ exports.optimizeImages = gulp.series(
   imageminProcess, webpProcess, svgsprite
 );
 
-// Обновление js
-const js = () => {
-  return gulp.src('./source/js/**')
-    .pipe(gulp.dest("./build/js"))
+// JAVASCRIPT
+const javascript = () => {
+  return gulp.src('./source/js/app.js')
+    .pipe(webpack({
+      devtool: 'source-map'
+    }))
+    .pipe(gulp.dest('./build/js/'))
     .pipe(sync.stream());
-}
+};
 
-exports.js = js;
+exports.javascript = javascript;
+
 
 // Обновление html
 const htmlreplace = () => {
@@ -122,7 +127,7 @@ const copy = () => {
   return gulp.src([
     "./source/fonts/**/*.{woff,woff2}",
     "./source/img/**",
-    "./source/js/**",
+    "./source/js/additionally/*.js",
     "./source/*.ico",
     "./source/*.html"
   ], {
@@ -153,14 +158,14 @@ exports.server = server;
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
   gulp.watch("source/*.html").on("change", gulp.series("htmlreplace"));
-  gulp.watch("source/js/**/*.js").on("change", gulp.series("js"));
+  gulp.watch("source/js/**/*.js").on("change", gulp.series("javascript"));
 }
 
 exports.build = gulp.series(
-  clean, copy, styles
+  clean, copy, styles, javascript
 );
 
 // NPM RUN GULP
 exports.start = gulp.series(
-  clean, copy, styles, server, watcher
+  clean, copy, styles, javascript, server, watcher
 );

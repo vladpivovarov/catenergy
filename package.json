@@ -41,7 +41,8 @@
     "gulp.spritesmith": "^6.12.1",
     "sass": "^1.49.9",
     "stylelint": "^13.13.1",
-    "stylelint-config-htmlacademy": "^0.1.12"
+    "stylelint-config-htmlacademy": "^0.1.12",
+    "webpack-stream": "^7.0.0"
   },
   "editorconfig-cli": [
     "*.json",
